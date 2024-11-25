@@ -16,8 +16,16 @@
             "PragmaGoTech\\Interview\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "PragmaGoTech\\Interview\\Test\\": "tests/"
+        }
+    },
     "require-dev": {
         "phpunit/phpunit": "^11.4",
         "symfony/var-dumper": "^7.1"
+    },
+    "scripts": {
+        "tests": "phpunit --colors=always ./tests"
     }
 }
