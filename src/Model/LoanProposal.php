@@ -14,10 +14,15 @@ class LoanProposal
 
     private float $amount;
 
-    public function __construct(int $term, float $amount)
+    private function __construct(int $term, float $amount)
     {
         $this->term = $term;
         $this->amount = $amount;
+    }
+
+    public static function create(int $term, float $amount)
+    {
+        return new static($term, $amount);
     }
 
     /**
