@@ -1,3 +1,6 @@
 .idea/
+.phpunit.cache/
+
+reports/
 
 vendor/
