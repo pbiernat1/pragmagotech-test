@@ -9,8 +9,6 @@ use PragmaGoTech\Interview\Model\LoanProposal;
 
 class MaxValueValidatorExtension implements ValidatorExtensionInterface
 {
-    private int $maxAmountValue = 20000; // PLN
-
     public function __construct(private float $maxValue)
     {
     }
