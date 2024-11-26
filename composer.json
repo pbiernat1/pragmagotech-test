@@ -11,6 +11,11 @@
             "email": "piotr1biernat@gmail.com"
         }
     ],
+    "config": {
+        "platform": {
+            "php": "8.2"
+        }
+    },
     "autoload": {
         "psr-4": {
             "PragmaGoTech\\Interview\\": "src/"
