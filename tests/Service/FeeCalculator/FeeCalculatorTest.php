@@ -17,8 +17,6 @@ class FeeCalculatorTest extends TestCase
     private const ONE_YEAR  = 12;
     private const TWO_YEARS = 24;
 
-    private const VALUE_BELOW_RANGE   = 10;
-    private const VALUE_BETWEEN_RANGE = 10000;
     private const VALUE_OVER_RANGE    = 100000;
 
     public function testInvalidLoanTermValue()

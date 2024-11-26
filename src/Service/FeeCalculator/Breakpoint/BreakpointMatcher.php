@@ -10,16 +10,16 @@ class BreakpointMatcher
 
     private int $upperValue = 0;
 
-    public static function create(array $breakpoints): BreakpointMatcher
+    public static function create(BreakpointInterface $generator): BreakpointMatcher
     {
-        return new static($breakpoints);
+        return new static($generator->getBreakpoints());
     }
 
     private function __construct(private array $breakpoints)
     {
     }
 
-    public function calculate(float $loanAmount): void
+    public function getForAmount(float $loanAmount): void
     {
         foreach ($this->breakpoints as $amount => $fee) {
             if ($loanAmount <= $amount) {

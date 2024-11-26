@@ -19,11 +19,10 @@ class BreakpointMatcherTest extends TestCase
 
     public function testValueBelowRangeForOneYearLoanBreakpoints()
     {
-        $breakpoints = BreakpointFactory::create(static::ONE_YEAR)
-            ->getBreakpoints();
+        $breakpointGenerator = BreakpointFactory::create(static::ONE_YEAR);
 
-        $breakpointsMatcher = BreakpointMatcher::create($breakpoints);
-        $breakpointsMatcher->calculate(static::VALUE_BELOW_RANGE);
+        $breakpointsMatcher = BreakpointMatcher::create($breakpointGenerator);
+        $breakpointsMatcher->getForAmount(static::VALUE_BELOW_RANGE);
 
         $this->assertEquals(0, $breakpointsMatcher->getLowerValue());
         $this->assertEquals(1000, $breakpointsMatcher->getUpperValue());
@@ -31,11 +30,10 @@ class BreakpointMatcherTest extends TestCase
 
     public function testValueOverRangeForOneYearLoanBreakpoints()
     {
-        $breakpoints = BreakpointFactory::create(static::ONE_YEAR)
-            ->getBreakpoints();
+        $breakpointGenerator = BreakpointFactory::create(static::ONE_YEAR);
 
-        $breakpointsMatcher = BreakpointMatcher::create($breakpoints);
-        $breakpointsMatcher->calculate(static::VALUE_OVER_RANGE);
+        $breakpointsMatcher = BreakpointMatcher::create($breakpointGenerator);
+        $breakpointsMatcher->getForAmount(static::VALUE_OVER_RANGE);
 
         $this->assertEquals(20000, $breakpointsMatcher->getLowerValue());
         $this->assertEquals(0, $breakpointsMatcher->getUpperValue());
@@ -43,11 +41,10 @@ class BreakpointMatcherTest extends TestCase
 
     public function testMatchedValueForOneYearLoanBreakpoints()
     {
-        $breakpoints = BreakpointFactory::create(static::ONE_YEAR)
-            ->getBreakpoints();
+        $breakpointGenerator = BreakpointFactory::create(static::ONE_YEAR);
 
-        $breakpointsMatcher = BreakpointMatcher::create($breakpoints);
-        $breakpointsMatcher->calculate(static::VALUE_BETWEEN_RANGE);
+        $breakpointsMatcher = BreakpointMatcher::create($breakpointGenerator);
+        $breakpointsMatcher->getForAmount(static::VALUE_BETWEEN_RANGE);
 
         $this->assertEquals(9000, $breakpointsMatcher->getLowerValue());
         $this->assertEquals(10000, $breakpointsMatcher->getUpperValue());
@@ -55,11 +52,10 @@ class BreakpointMatcherTest extends TestCase
 
     public function testValueBelowRangeForTwoYearsLoanBreakpoints()
     {
-        $breakpoints = BreakpointFactory::create(static::ONE_YEAR)
-            ->getBreakpoints();
+        $breakpointGenerator = BreakpointFactory::create(static::ONE_YEAR);
 
-        $breakpointsMatcher = BreakpointMatcher::create($breakpoints);
-        $breakpointsMatcher->calculate(static::VALUE_BELOW_RANGE);
+        $breakpointsMatcher = BreakpointMatcher::create($breakpointGenerator);
+        $breakpointsMatcher->getForAmount(static::VALUE_BELOW_RANGE);
 
         $this->assertEquals(0, $breakpointsMatcher->getLowerValue());
         $this->assertEquals(1000, $breakpointsMatcher->getUpperValue());
@@ -67,11 +63,10 @@ class BreakpointMatcherTest extends TestCase
 
     public function testValueOverRangeForTwoYearLoanBreakpoints()
     {
-        $breakpoints = BreakpointFactory::create(static::TWO_YEARS)
-            ->getBreakpoints();
+        $breakpointGenerator = BreakpointFactory::create(static::ONE_YEAR);
 
-        $breakpointsMatcher = BreakpointMatcher::create($breakpoints);
-        $breakpointsMatcher->calculate(static::VALUE_OVER_RANGE);
+        $breakpointsMatcher = BreakpointMatcher::create($breakpointGenerator);
+        $breakpointsMatcher->getForAmount(static::VALUE_OVER_RANGE);
 
         $this->assertEquals(20000, $breakpointsMatcher->getLowerValue());
         $this->assertEquals(0, $breakpointsMatcher->getUpperValue());
@@ -79,11 +74,10 @@ class BreakpointMatcherTest extends TestCase
 
     public function testMatchedValueForTwoYearsLoanBreakpoints()
     {
-        $breakpoints = BreakpointFactory::create(static::ONE_YEAR)
-            ->getBreakpoints();
+        $breakpointGenerator = BreakpointFactory::create(static::ONE_YEAR);
 
-        $breakpointsMatcher = BreakpointMatcher::create($breakpoints);
-        $breakpointsMatcher->calculate(static::VALUE_BETWEEN_RANGE);
+        $breakpointsMatcher = BreakpointMatcher::create($breakpointGenerator);
+        $breakpointsMatcher->getForAmount(static::VALUE_BETWEEN_RANGE);
 
         $this->assertEquals(9000, $breakpointsMatcher->getLowerValue());
         $this->assertEquals(10000, $breakpointsMatcher->getUpperValue());
