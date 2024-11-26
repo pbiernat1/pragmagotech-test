@@ -31,6 +31,7 @@
         "symfony/var-dumper": "^7.1"
     },
     "scripts": {
-        "tests": "phpunit --colors=always ./tests"
+        "tests": "./vendor/bin/phpunit",
+        "coverage": "php -d xdebug.mode=coverage ./vendor/bin/phpunit --coverage-html reports/coverage"
     }
 }
