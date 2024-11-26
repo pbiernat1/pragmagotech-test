@@ -6,7 +6,7 @@ namespace PragmaGoTech\Interview\Interface;
 
 use PragmaGoTech\Interview\Model\LoanProposal;
 
-interface ValidatorExtension
+interface ValidatorExtensionInterface
 {
     public function validate(LoanProposal $loanProposal): bool;
 }
