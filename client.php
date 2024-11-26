@@ -24,17 +24,12 @@ try {
     );
     $calculator = FeeCalculator::create($loanTermValidator, $loanAmountValidator);
 
-    $application = LoanProposal::create(12, 2750);
+    $application = LoanProposal::create(12, 19250);
     $fee = $calculator->calculate($application);
 
     dump($fee);
 
-    $application = LoanProposal::create(24, 2750);
-    $fee = $calculator->calculate($application);
-
-    dump($fee);
-
-    $application = LoanProposal::create(25, 2750);
+    $application = LoanProposal::create(24, 11500);
     $fee = $calculator->calculate($application);
 
     dump($fee);
