@@ -9,18 +9,18 @@ require_once 'vendor/autoload.php';
 
 use PragmaGoTech\Interview\Model\LoanProposal;
 use PragmaGoTech\Interview\Service\FeeCalculator\FeeCalculator;
-use PragmaGoTech\Interview\Service\LoanValidator\LoanAllowedTermsValidatorExtension;
-use PragmaGoTech\Interview\Service\LoanValidator\LoanMaxAmountValidatorExtension;
-use PragmaGoTech\Interview\Service\LoanValidator\LoanMinAmountValidatorExtension;
+use PragmaGoTech\Interview\Service\LoanValidator\AllowedValuesValidatorExtension;
+use PragmaGoTech\Interview\Service\LoanValidator\MaxValueValidatorExtension;
+use PragmaGoTech\Interview\Service\LoanValidator\MinValueValidatorExtension;
 use PragmaGoTech\Interview\Service\LoanValidator\Validator;
 
 try {
     $loanTermValidator = new Validator(
-        new LoanAllowedTermsValidatorExtension([12, 24])
+        new AllowedValuesValidatorExtension([12, 24])
     );
     $loanAmountValidator = new Validator(
-        new LoanMinAmountValidatorExtension(1000),
-        new LoanMaxAmountValidatorExtension(20000)
+        new MinValueValidatorExtension(1000),
+        new MaxValueValidatorExtension(20000)
     );
     $calculator = FeeCalculator::create($loanTermValidator, $loanAmountValidator);
 
