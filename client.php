@@ -36,5 +36,4 @@ try {
 }
 catch(\Exception $e) {
     echo 'Runtime error: '. get_class($e) .' on '. $e->getFile() .':'. $e->getLine() . PHP_EOL;
-    // dump($e->getTrace());
 }
