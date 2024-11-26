@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PragmaGoTech\Interview\Service\FeeCalculator\Breakpoint;
 
-class TwoYearLoanBreakpoints implements BreakpointInterface
+class TwoYearsLoanBreakpoints implements BreakpointInterface
 {
     public function getBreakpoints(): array
     {
