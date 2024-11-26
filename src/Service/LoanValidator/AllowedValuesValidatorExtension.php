@@ -7,7 +7,7 @@ namespace PragmaGoTech\Interview\Service\LoanValidator;
 use PragmaGoTech\Interview\Interface\ValidatorExtension as ValidatorExtensionInterface;
 use PragmaGoTech\Interview\Model\LoanProposal;
 
-class LoanAllowedTermsValidatorExtension implements ValidatorExtensionInterface
+class AllowedValuesValidatorExtension implements ValidatorExtensionInterface
 {
     public function __construct(private array $allowedValues)
     {

@@ -7,7 +7,7 @@ namespace PragmaGoTech\Interview\Service\LoanValidator;
 use PragmaGoTech\Interview\Interface\ValidatorExtension as ValidatorExtensionInterface;
 use PragmaGoTech\Interview\Model\LoanProposal;
 
-class LoanMinAmountValidatorExtension implements ValidatorExtensionInterface
+class MinValueValidatorExtension implements ValidatorExtensionInterface
 {
     public function __construct(private float $minValue)
     {
