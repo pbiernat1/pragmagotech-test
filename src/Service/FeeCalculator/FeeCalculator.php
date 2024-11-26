@@ -68,8 +68,8 @@ class FeeCalculator implements FeeCalculatorInterface
         $rounding = RoundingFactory::create();// at this moment we have only RoundUpToFive class
 
         $totalAmount = $loanAmount + $fee;
-        $roundUpToFive = $rounding->round($totalAmount);
-        $fee = $roundUpToFive - $loanAmount;
+        $roundedAmount = $rounding->round($totalAmount);
+        $fee = $roundedAmount - $loanAmount;
 
         return round($fee, 2);
     }
