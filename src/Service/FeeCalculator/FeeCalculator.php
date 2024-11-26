@@ -60,10 +60,7 @@ class FeeCalculator implements FeeCalculatorInterface
         $lowerFee = $breakpoints[$lowerBreakpoint];
         $upperFee = $breakpoints[$upperBreakpoint];
 
-        $lowerAmount = $lowerBreakpoint;
-        $upperAmount = $upperBreakpoint;
-
-        $fee = $lowerFee + (($loanAmount - $lowerAmount) / ($upperAmount - $lowerAmount)) * ($upperFee - $lowerFee);
+        $fee = $lowerFee + (($loanAmount - $lowerBreakpoint) / ($upperBreakpoint - $lowerBreakpoint)) * ($upperFee - $lowerFee);
 
         $rounding = RoundingFactory::create();// at this moment we have only RoundUpToFive class
 
