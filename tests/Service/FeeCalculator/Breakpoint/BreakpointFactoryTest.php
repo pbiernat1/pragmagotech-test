@@ -11,23 +11,27 @@ use PragmaGoTech\Interview\Service\FeeCalculator\Breakpoint\TwoYearsLoanBreakpoi
 
 class BreakpointFactoryTest extends TestCase
 {
+    private const ONE_YEAR   = 12;
+    private const TWO_YEARS  = 24;
+    private const FOUR_YEARS = 48;
+
     public function testReturnNullOnInvalidBreakpointSelected()
     {
-        $breakpointObject = BreakpointFactory::create(48);
+        $breakpointObject = BreakpointFactory::create(static::FOUR_YEARS);
 
         $this->assertNull($breakpointObject);
     }
 
     public function testOneYearBreakpointSelected()
     {
-        $breakpointObject = BreakpointFactory::create(12);
+        $breakpointObject = BreakpointFactory::create(static::ONE_YEAR);
 
         $this->assertEquals(OneYearLoanBreakpoints::class, get_class($breakpointObject));
     }
 
     public function testTwoYearsBreakpointSelected()
     {
-        $breakpointObject = BreakpointFactory::create(24);
+        $breakpointObject = BreakpointFactory::create(static::TWO_YEARS);
 
         $this->assertEquals(TwoYearsLoanBreakpoints::class, get_class($breakpointObject));
     }

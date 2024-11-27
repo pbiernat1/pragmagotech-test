@@ -6,7 +6,6 @@ namespace PragmaGoTech\Interview\Test;
 
 use PHPUnit\Framework\TestCase;
 use PragmaGoTech\Interview\Service\FeeCalculator\Rounding\RoundingFactory;
-use PragmaGoTech\Interview\Service\FeeCalculator\Rounding\RoundUpToFive;
 use PragmaGoTech\Interview\Service\FeeCalculator\Rounding\RoundUpToFiveRounding;
 
 class RoundingFactoryTest extends TestCase

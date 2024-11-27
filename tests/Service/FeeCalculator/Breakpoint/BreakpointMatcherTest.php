@@ -52,7 +52,7 @@ class BreakpointMatcherTest extends TestCase
 
     public function testValueBelowRangeForTwoYearsLoanBreakpoints()
     {
-        $breakpointGenerator = BreakpointFactory::create(static::ONE_YEAR);
+        $breakpointGenerator = BreakpointFactory::create(static::TWO_YEARS);
 
         $breakpointsMatcher = BreakpointMatcher::create($breakpointGenerator);
         $breakpointsMatcher->getForAmount(static::VALUE_BELOW_RANGE);
@@ -63,7 +63,7 @@ class BreakpointMatcherTest extends TestCase
 
     public function testValueOverRangeForTwoYearLoanBreakpoints()
     {
-        $breakpointGenerator = BreakpointFactory::create(static::ONE_YEAR);
+        $breakpointGenerator = BreakpointFactory::create(static::TWO_YEARS);
 
         $breakpointsMatcher = BreakpointMatcher::create($breakpointGenerator);
         $breakpointsMatcher->getForAmount(static::VALUE_OVER_RANGE);
@@ -74,7 +74,7 @@ class BreakpointMatcherTest extends TestCase
 
     public function testMatchedValueForTwoYearsLoanBreakpoints()
     {
-        $breakpointGenerator = BreakpointFactory::create(static::ONE_YEAR);
+        $breakpointGenerator = BreakpointFactory::create(static::TWO_YEARS);
 
         $breakpointsMatcher = BreakpointMatcher::create($breakpointGenerator);
         $breakpointsMatcher->getForAmount(static::VALUE_BETWEEN_RANGE);
