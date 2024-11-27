@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace PragmaGoTech\Interview\Service\FeeCalculator;
 
+use PragmaGoTech\Interview\Interface\RoundingInterface;
 use PragmaGoTech\Interview\Service\FeeCalculator\Breakpoint\BreakpointInterface;
 use PragmaGoTech\Interview\Service\FeeCalculator\Breakpoint\BreakpointMatcher;
 use PragmaGoTech\Interview\Service\FeeCalculator\Rounding\RoundingFactory;
-use PragmaGoTech\Interview\Service\FeeCalculator\Rounding\RoundingInterface;
 
 class FeeCalculatorBaseAlgorithm implements FeeCalculatorAlgorithmInterface
 {

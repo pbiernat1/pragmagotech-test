@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PragmaGoTech\Interview\Service\FeeCalculator\Rounding;
+namespace PragmaGoTech\Interview\Interface;
 
 interface RoundingInterface
 {
