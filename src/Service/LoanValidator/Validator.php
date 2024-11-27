@@ -27,8 +27,6 @@ class Validator implements ValidatorInterface
             if (!$isValid) {
                 break;
             }
-
-            continue;
         }
 
         return $isValid;
