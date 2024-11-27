@@ -7,6 +7,7 @@ namespace PragmaGoTech\Interview\Test;
 use PHPUnit\Framework\TestCase;
 use PragmaGoTech\Interview\Service\FeeCalculator\Rounding\RoundingFactory;
 use PragmaGoTech\Interview\Service\FeeCalculator\Rounding\RoundUpToFive;
+use PragmaGoTech\Interview\Service\FeeCalculator\Rounding\RoundUpToFiveRounding;
 
 class RoundingFactoryTest extends TestCase
 {
@@ -14,6 +15,6 @@ class RoundingFactoryTest extends TestCase
     {
         $roundingObject = RoundingFactory::create();
 
-        $this->assertEquals(RoundUpToFive::class, get_class($roundingObject));
+        $this->assertEquals(RoundUpToFiveRounding::class, get_class($roundingObject));
     }
 }

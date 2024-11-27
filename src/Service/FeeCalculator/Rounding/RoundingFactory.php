@@ -10,6 +10,6 @@ class RoundingFactory
 {
     public static function create(): RoundingInterface
     {
-        return new RoundUpToFive();
+        return new RoundUpToFiveRounding();
     }
 }

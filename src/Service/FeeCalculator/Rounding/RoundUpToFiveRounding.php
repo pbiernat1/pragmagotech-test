@@ -6,7 +6,7 @@ namespace PragmaGoTech\Interview\Service\FeeCalculator\Rounding;
 
 use PragmaGoTech\Interview\Interface\RoundingInterface;
 
-class RoundUpToFive implements RoundingInterface
+class RoundUpToFiveRounding implements RoundingInterface
 {
     public function round(float $amount): float
     {
