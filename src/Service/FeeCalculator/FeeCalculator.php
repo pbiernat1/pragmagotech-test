@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace PragmaGoTech\Interview\Service\FeeCalculator;
 
 use PragmaGoTech\Interview\Exception\ValidatorException;
-use PragmaGoTech\Interview\Interface\FeeCalculator as FeeCalculatorInterface;
-use PragmaGoTech\Interview\Interface\Validator as ValidatorInterface;
+use PragmaGoTech\Interview\Interface\FeeCalculatorInterface;
+use PragmaGoTech\Interview\Interface\ValidatorInterface;
 use PragmaGoTech\Interview\Service\LoanValidator\Validator;
 use PragmaGoTech\Interview\Service\FeeCalculator\Breakpoint\BreakpointFactory;
 use PragmaGoTech\Interview\Model\LoanProposal;

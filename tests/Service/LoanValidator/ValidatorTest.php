@@ -7,9 +7,9 @@ namespace PragmaGoTech\Interview\Test;
 use PHPUnit\Framework\TestCase;
 use PragmaGoTech\Interview\Model\LoanProposal;
 use PragmaGoTech\Interview\Service\LoanValidator\AllowedValuesValidatorExtension;
-use PragmaGoTech\Interview\Service\LoanValidator\Validator;
 use PragmaGoTech\Interview\Service\LoanValidator\MaxValueValidatorExtension;
 use PragmaGoTech\Interview\Service\LoanValidator\MinValueValidatorExtension;
+use PragmaGoTech\Interview\Service\LoanValidator\Validator;
 
 class ValidatorTest extends TestCase
 {

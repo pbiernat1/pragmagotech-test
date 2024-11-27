@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace PragmaGoTech\Interview\Service\LoanValidator;
 
-use PragmaGoTech\Interview\Interface\Validator as ValidatorInterface;
-use PragmaGoTech\Interview\Interface\ValidatorExtension;
+use PragmaGoTech\Interview\Interface\ValidatorInterface;
+use PragmaGoTech\Interview\Interface\ValidatorExtensionInterface;
 use PragmaGoTech\Interview\Model\LoanProposal;
 
 class Validator implements ValidatorInterface
 {
     private $extensions = [];
 
-    public function __construct(ValidatorExtension ...$extensions)
+    public function __construct(ValidatorExtensionInterface ...$extensions)
     {
         $this->extensions = $extensions;
     }

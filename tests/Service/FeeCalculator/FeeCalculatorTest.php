@@ -17,7 +17,7 @@ class FeeCalculatorTest extends TestCase
     private const ONE_YEAR  = 12;
     private const TWO_YEARS = 24;
 
-    private const VALUE_OVER_RANGE    = 100000;
+    private const VALUE_OVER_RANGE = 100000;
 
     public function testInvalidLoanTermValue()
     {
@@ -57,7 +57,7 @@ class FeeCalculatorTest extends TestCase
     public function testSuccessfullyCalculations()
     {
         $loanTermValidator = new Validator(
-            new AllowedValuesValidatorExtension([12, 24])
+            new AllowedValuesValidatorExtension([static::ONE_YEAR, static::TWO_YEARS])
         );
         $loanAmountValidator = new Validator(
             new MinValueValidatorExtension(1000),
@@ -65,10 +65,10 @@ class FeeCalculatorTest extends TestCase
         );
         $calculator = FeeCalculator::create($loanTermValidator, $loanAmountValidator);
     
-        $application1 = LoanProposal::create(12, 19250);
+        $application1 = LoanProposal::create(static::ONE_YEAR, 19250);
         $fee1 = $calculator->calculate($application1);
 
-        $application2 = LoanProposal::create(24, 11500);
+        $application2 = LoanProposal::create(static::TWO_YEARS, 11500);
         $fee2 = $calculator->calculate($application2);
 
         $this->assertSame((float)385, $fee1);

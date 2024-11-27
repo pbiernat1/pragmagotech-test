@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PragmaGoTech\Interview\Service\LoanValidator;
 
-use PragmaGoTech\Interview\Interface\ValidatorExtension as ValidatorExtensionInterface;
+use PragmaGoTech\Interview\Interface\ValidatorExtensionInterface;
 use PragmaGoTech\Interview\Model\LoanProposal;
 
 class AllowedValuesValidatorExtension implements ValidatorExtensionInterface
