@@ -10,17 +10,14 @@ class BreakpointFactory
 
     private const TWO_YEARS = 24;
 
-    public static function create(int $term): ?BreakpointInterface
+    public static function create(int $term): BreakpointInterface
     {
         switch ($term) {
-            case static::ONE_YEAR:
-                return new OneYearLoanBreakpoints();
-                break;
-            case static::TWO_YEARS:
+            case self::TWO_YEARS:
                 return new TwoYearsLoanBreakpoints();
-                break;
+            case self::ONE_YEAR:
+            default:
+                return new OneYearLoanBreakpoints();
         }
-
-        return null;
     }
 }

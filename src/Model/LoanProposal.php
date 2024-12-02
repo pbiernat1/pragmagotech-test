@@ -20,9 +20,9 @@ class LoanProposal
         $this->amount = $amount;
     }
 
-    public static function create(int $term, float $amount)
+    public static function create(int $term, float $amount): LoanProposal
     {
-        return new static($term, $amount);
+        return new self($term, $amount);
     }
 
     /**

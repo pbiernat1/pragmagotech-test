@@ -15,13 +15,6 @@ class BreakpointFactoryTest extends TestCase
     private const TWO_YEARS  = 24;
     private const FOUR_YEARS = 48;
 
-    public function testReturnNullOnInvalidBreakpointSelected()
-    {
-        $breakpointObject = BreakpointFactory::create(static::FOUR_YEARS);
-
-        $this->assertNull($breakpointObject);
-    }
-
     public function testOneYearBreakpointSelected()
     {
         $breakpointObject = BreakpointFactory::create(static::ONE_YEAR);

@@ -21,9 +21,9 @@ class FeeCalculatorBaseAlgorithm implements FeeCalculatorAlgorithmInterface
         $this->rounding = RoundingFactory::create(); // at this moment we have only RoundUpToFive class
     }
 
-    public static function create(BreakpointInterface $breakpointGenerator)
+    public static function create(BreakpointInterface $breakpointGenerator): self
     {
-        return new static($breakpointGenerator);
+        return new self($breakpointGenerator);
     }
 
     public function calculate(float $loanAmount): float

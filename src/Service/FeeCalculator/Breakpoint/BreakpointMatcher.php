@@ -10,11 +10,14 @@ class BreakpointMatcher
 
     private int $upperValue = 0;
 
-    public static function create(BreakpointInterface $generator): BreakpointMatcher
+    public static function create(BreakpointInterface $generator): self
     {
-        return new static($generator->getBreakpoints());
+        return new self($generator->getBreakpoints());
     }
 
+    /**
+     * @param array<int, int> $breakpoints
+     */
     private function __construct(private array $breakpoints)
     {
     }

@@ -10,6 +10,9 @@ use PragmaGoTech\Interview\Model\LoanProposal;
 
 class Validator implements ValidatorInterface
 {
+    /**
+     * @var array<ValidatorExtensionInterface>
+     */
     private $extensions = [];
 
     public function __construct(ValidatorExtensionInterface ...$extensions)

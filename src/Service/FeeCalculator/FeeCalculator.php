@@ -14,14 +14,19 @@ use PragmaGoTech\Interview\Service\FeeCalculator\Breakpoint\BreakpointMatcher;
 
 class FeeCalculator implements FeeCalculatorInterface
 {
+    /**
+     * @var array<ValidatorInterface>
+     */
     private $validators = [];
 
-    private function __construct(Validator ...$validators) {
+    private function __construct(Validator ...$validators)
+    {
         $this->validators = $validators;
     }
 
-    public static function create(Validator ...$validators) {
-        return new static(...$validators);
+    public static function create(Validator ...$validators): self
+    {
+        return new self(...$validators);
     }
 
     /**
@@ -42,12 +47,10 @@ class FeeCalculator implements FeeCalculatorInterface
         return round($fee, 2);
     }
 
-    private function calculateFee(float $loanAmount, int $term)
+    private function calculateFee(float $loanAmount, int $term): float
     {
         $breakpointGenerator = BreakpointFactory::create($term);
-        $breakpointsMatcher = BreakpointMatcher::create($breakpointGenerator);
-
-        $baseCalculator = FeeCalculatorBaseAlgorithm::create($breakpointGenerator, $breakpointsMatcher);
+        $baseCalculator = FeeCalculatorBaseAlgorithm::create($breakpointGenerator);
         
         return $baseCalculator->calculate($loanAmount);
     }

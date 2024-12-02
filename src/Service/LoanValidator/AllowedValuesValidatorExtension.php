@@ -9,6 +9,9 @@ use PragmaGoTech\Interview\Model\LoanProposal;
 
 class AllowedValuesValidatorExtension implements ValidatorExtensionInterface
 {
+    /**
+     * @param array<mixed> $allowedValues
+     */
     public function __construct(private array $allowedValues)
     {
     }
